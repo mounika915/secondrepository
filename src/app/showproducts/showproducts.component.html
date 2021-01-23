@@ -1,0 +1,16 @@
+<h4 class="text-center"> Products List</h4>
+<div class="card"  *ngFor="let data of products">
+    <div class="row">
+    <div class="col-sm-6">
+<img [src]=data.profilepic width="150px">
+</div>
+<div class="col-sm-6">
+    
+ <p><span style="color:blue">Id:</span>{{data.Id}}</p>   
+<p><span style="color:blue">Name:</span>{{data.name}}</p>
+<p><span style="color:blue">Description:</span>{{data.description}}</p>
+<p><span style="color:blue">Price:Rs:</span>{{data.price}}</p>
+</div>
+
+</div>
+</div>

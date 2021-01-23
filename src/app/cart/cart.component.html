@@ -1,0 +1,13 @@
+ <h4 class="text-primary text-center">My Cart</h4>
+ <hr>
+<div  *ngFor="let item of items">
+    <div class="row mb-4">
+    <div class="col-sm-6">
+    <img [src]=item.profilepic width="130px" height="130px" (click)="getItem(item.name)">
+</div>
+<div class="col-sm-6">
+<p><span style="color:blue">Name:</span>{{item?.name}}{{item?.description}}</p>
+<p><span style="color:blue">Price:</span>{{item?.price}}</p>
+ <button class="btn btn-danger" (click)="remove(item.name)">Remove</button>
+</div>
+</div>

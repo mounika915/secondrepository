@@ -1,0 +1,49 @@
+
+<div id="demo" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+        <ul class="carousel-indicators">
+          <li data-target="#demo" data-slide-to="0" class="active"></li>
+          <li data-target="#demo" data-slide-to="1"></li>
+          <li data-target="#demo" data-slide-to="2"></li>
+          <li data-target="#demo" data-slide-to="3"></li>
+         
+        </ul>
+        
+        <!-- The slideshow -->
+        <div class="carousel-inner">
+          <div class="carousel-item active text-center" style="background-color: rgb(85, 172, 167);">
+            <img alt="School From Home" src="https://images-eu.ssl-images-amazon.com/images/G/31/img20/Events/Christmas20/GW/new/Christmas-GW-Hero-PC1x._CB413564947_.jpg" height="600px" width="1500px" data-a-hires="https://images-eu.ssl-images-amazon.com/images/G/31/img20/Events/Christmas20/GW/new/Christmas-GW-Hero-PC2x._CB413565103_.jpg">
+          </div>
+          <div class="carousel-item text-center" style="background-color:grey">
+            <img alt="Musical Instruments" src="https://images-eu.ssl-images-amazon.com/images/G/31/img20/CEPC/under1499store/english/Gateway/updated/V242338866_IN_CEPC_Under_1499_store_Graphics_1500x600._CB416140037_.jpg" height="600px" width="1500px" data-a-hires="https://images-eu.ssl-images-amazon.com/images/G/31/img20/CEPC/under1499store/english/Gateway/updated/V242338866_IN_CEPC_Under_1499_store_Graphics_3000x1200._CB416140037_.jpg">
+          </div>
+          <div class="carousel-item text-center" style="background-color:rgb(207, 191, 98)">
+            <img alt="Craft" src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG20/Home/BAU/Banners/arts_1500x600._CB413911972_.jpg" height="600px" width="1500px" data-a-hires="https://images-eu.ssl-images-amazon.com/images/G/31/IMG20/Home/BAU/Banners/arts_3000x1200._CB413911972_.jpg">
+          </div>
+          <div class="carousel-item text-center" style="background-color:rgb(207, 191, 98)">
+            <img alt="Mobiles" src="https://images-eu.ssl-images-amazon.com/images/G/31/img20/Wireless/Samsung/FPF_DEC/GW_Rv4Family/D19594167_IN_WL_FPF_Samsung_MFamily_DesktopTallHero_1500x600._CB412285055_.jpg" height="600px" width="1500px" data-a-hires="https://images-eu.ssl-images-amazon.com/images/G/31/img20/Wireless/Samsung/FPF_DEC/GW_Rv4Family/D19594167_IN_WL_FPF_Samsung_MFamily_DesktopTallHero_3000x1200._CB412285055_.jpg">
+          </div>
+          
+        </div>
+      <!-- Left and right controls -->
+        <a class="carousel-control-prev" href="#demo" data-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next" href="#demo" data-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </a>
+      </div>
+      <br>
+<div class="container">
+<div class="row">
+<div *ngFor="let data of products" class="card-deck col-md-4 col-sm-12">
+<div class="card"> 
+    <div class="card-body mx-auto">
+<img [src]=data.profilepic width="140px" height="140px" (click)="getProduct(data.Id)">
+  </div>
+<p><span style="color:blue">{{data.name}}{{data.description}}</span></p>
+<p><span style="color:blue">Rs:{{data.price}}</span></p>
+</div>
+</div>
+</div>
+</div>

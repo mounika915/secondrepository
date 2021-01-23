@@ -1,0 +1,15 @@
+.container{
+    font-family: 'Roboto Slab', serif;
+    width:400px;
+    height: 150px;
+}
+#h{
+    font-size: x-large;
+}
+.navbar{
+background-color:rgb(234, 245, 234) ;
+height: 1000px;
+}
+.list{
+    padding-bottom: 1520px;
+}

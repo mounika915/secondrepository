@@ -1,0 +1,79 @@
+<div class="row">
+<div class=" col-lg-3 col-sm-3">
+    <nav class="navbar">
+        <ul class="navbar-nav list">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="cart" routerLinkActive="active">My Cart</a>
+          </li>
+          
+        </ul>
+      </nav>  
+</div>
+<div class="col-lg-5 col-sm-12">
+<router-outlet></router-outlet>
+</div>
+
+
+
+<div class="col-lg-4 col-sm-9">
+<h4 id="h" class="text-center text-info ">Welcome {{purchaserCredentials?.name}}</h4>
+<div class="text-right">
+<button class="btn btn-warning" (click)="logout()">Logout</button>
+</div>
+
+<!-- update form -->
+<div *ngIf="updateFormStatus">
+    <div class="jumbotron">
+    <form #ref="ngForm" (ngSubmit)="saveEditedData(ref)">
+        
+        <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name" [ngModel]="purchaserCredentials?.name" class="form-control">
+         </div>
+         <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" [ngModel]="purchaserCredentials?.email" class="form-control" readonly>
+        </div>
+        <div class="form-group">
+        <label for="dob">Date of birth</label>
+        <input type="date" name="dob" id="dob" [ngModel]="purchaserCredentials?.dob" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="Gender">Gender</label>
+            <input type="text" name="Gender" id="Gender" [ngModel]="purchaserCredentials?.Gender" class="form-control">
+            </div>
+        <div class="form-group">
+            <button class="btn btn-primary" (click)="saveEditedData(ref)">Save</button>
+        </div>
+    </form>
+</div>
+    </div>
+<div class="container">
+    <div class="mx-auto">
+        <img [src]=purchaserCredentials?.profilepic width="140px" height="140px" style="border-radius:150%;margin-left:100px;">
+    </div>
+    <br> 
+<table class="table">
+    <tr>
+        <th>Name</th>
+        <td>{{purchaserCredentials?.name}}</td>
+    </tr>
+    <tr>
+        <th>Email</th>
+        <td>{{purchaserCredentials?.email}}</td>
+    </tr>
+    <tr>
+        <th>Date of birth</th>
+        <td>{{purchaserCredentials?.dob}}</td>
+    </tr>
+    <tr>
+        <th>Gender</th>
+        <td>{{purchaserCredentials?.Gender}}</td>
+    </tr>
+</table>
+<!-- update profile -->
+<button class="btn btn-primary float-end" (click)="showUpdateForm()">Edit Profile</button>
+
+</div>
+</div>
+</div>

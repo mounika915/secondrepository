@@ -1,0 +1,23 @@
+<p id="p">Please select one of the following options to continue the registration process</p>
+<div class="card">
+    <div class="card-body">
+<form #ref="ngForm" (ngSubmit)="registerData(ref)">
+<div class="row">
+        <div class="col-sm-6">
+            <div class="form-check">
+                <input type="radio" name="Purchaser" class="form-check-input" id="Purchaser" value="Purchaser"  ngModel>
+                <label for="Purchaser" class="form-check-label">Purchaser</label>
+            </div>
+        </div>
+            <div class="col-sm-6">
+            <div class="form-check">
+                <input type="radio" name="Seller" class="form-check-input" id="Seller" value="Seller" ngModel>
+                <label for="Seller"     class="form-check-label">Seller</label>
+            </div>
+        </div>
+    </div>
+    </form>
+    <button type="submit" class="btn text-info d-block mx-auto" (click)="registerData(ref)"><u>Next</u></button>
+</div>  
+<p id="p">Already have an account?<button class="btn btn-small text-info" (click)="signin()"><u>Sign In</u></button></p>  
+</div>

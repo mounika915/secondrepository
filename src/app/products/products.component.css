@@ -1,0 +1,28 @@
+.card-header{
+    font-weight: bold; 
+    font-size:large;
+    text-align:center;
+}
+.card{
+    width: 700px;
+    height:300px;
+    margin-bottom: 10px;
+}
+.card-footer{
+    
+    background-color: white;
+}
+.carousel-inner{
+    height:250px;
+    
+}
+.row{
+    margin:auto;   
+}
+.carousel-item{
+    height: 400px;
+}
+.container{
+    margin:auto;
+    font-family: 'Roboto Slab', serif;
+}

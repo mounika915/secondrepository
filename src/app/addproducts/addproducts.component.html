@@ -1,0 +1,32 @@
+
+ 
+    <div class="jumbotron bg-info">
+        <form  #ref="ngForm" (ngSubmit)="addProducts(ref)">
+            <div class="form-group mb-2">
+                <label for="profilepic">Product</label>
+                <input type="file" (change)="incomingfile($event)"  name="profilepic" accept="image/*" id="profilepic" class="form-control" ngModel>
+            </div>  
+            <div class="form-group mb-2">
+                <label for="Id">Product Id</label>
+                <input type="number" name="Id" id="Id" class="form-control" ngModel required autocomplete="off" #IdnameRef="ngModel">
+                <p class="text-danger" *ngIf="IdnameRef?.touched&&IdnameRef?.invalid">Id should not be empty</p>
+            </div>
+            <div class="form-group mb-2">
+                <label for="name">Product name</label>
+                <input type="text" name="name" id="name" class="form-control" ngModel required autocomplete="off" #nameRef="ngModel">
+                <p class="text-danger" *ngIf="nameRef?.touched&&nameRef?.invalid">Name should not be empty</p>
+            </div>
+            <div class="form-group mb-2">
+                <label for="description">Product description</label>
+                <input type="text" name="description" id="description" class="form-control" ngModel required autocomplete="off" #descriptionRef="ngModel">
+                <p class="text-danger" *ngIf="descriptionRef?.touched&&descriptionRef?.invalid">Please give description about your product</p>
+            </div>
+            <div class="form-group mb-2">
+                <label for="price">Product price</label>
+                <input type="number" name="price" id="price" class="form-control" ngModel required autocomplete="off" #pricenameRef="ngModel">
+                <p class="text-danger" *ngIf="pricenameRef?.touched&&pricenameRef?.invalid">Price should not be empty</p>
+            </div>
+              
+            <button type="submit" class="btn btn-warning d-block mx-auto">Add Product</button>
+        </form>
+    </div>

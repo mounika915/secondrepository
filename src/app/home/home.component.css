@@ -1,0 +1,24 @@
+.carousel-inner{
+    height:250px;
+    
+}
+#h3{
+    font-size:35px;
+    color: black;
+    font-family: 'Crimson Text', serif;
+}
+#p1{
+   
+    font-size:25px;
+    color: black;
+    font-family: 'Crimson Text', serif;
+   line-height: 30px;
+    
+}
+.carousel-item{
+    height: 400px;
+}
+#link{
+    font-size: x-large;
+    font-family: 'Roboto Slab', serif;
+}

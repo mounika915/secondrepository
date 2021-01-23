@@ -1,0 +1,33 @@
+.card{
+    width:400px;
+    margin:auto;
+    margin-top: 10px;
+    margin-bottom: 400px;
+    font-family: 'Roboto Slab', serif;
+}
+#form{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.jumbotron{
+    border:1px solid green;
+    width:250px;
+    height:10px;
+    margin:auto;
+    margin-top:30px;
+    background-color: white;
+    
+}
+#password{
+    width:340px;
+    
+}
+.material-icons{
+    border:1px solid rgb(196, 194, 194);
+    border-radius: 4px;
+height: 38px;
+width:38px;
+text-align: center;
+padding-top: 6px;
+cursor: pointer;
+}

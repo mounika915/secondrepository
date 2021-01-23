@@ -1,0 +1,126 @@
+
+<nav class="navbar navbar-expand-sm bg-dark">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+      <ul class="navbar-nav ml-auto">
+        <div>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <img [src]=purchaserCredentials?.profilepic  width="30px" height="30px" style="border-radius: 100%;">
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+<!-- update form -->
+<div *ngIf="updateFormStatus">
+<div class="jumbotron">
+<form #ref="ngForm" (ngSubmit)="saveEditedData(ref)">
+    
+    <div class="form-group">
+    <label for="name">Name</label>
+    <input type="text" name="name" id="name" [ngModel]="purchaserCredentials?.name" class="form-control">
+     </div>
+     <div class="form-group">
+    <label for="email">Email</label>
+    <input type="email" name="email" id="email" [ngModel]="purchaserCredentials?.email" class="form-control" readonly>
+    </div>
+    <div class="form-group">
+    <label for="dob">Date of birth</label>
+    <input type="date" name="dob" id="dob" [ngModel]="purchaserCredentials?.dob" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="Gender">Gender</label>
+        <input type="text" name="Gender" id="Gender" [ngModel]="purchaserCredentials?.Gender" class="form-control">
+        </div>
+    <div class="form-group">
+        <button class="btn btn-primary" (click)="saveEditedData(ref)">Save</button>
+    </div>
+</form>
+</div>
+</div>
+<div class="card">
+<h2 class="text-center">My Profile</h2>
+<div class="text-right">
+    <button class="btn btn-warning" (click)="logout()">Logout</button>
+    </div>
+<div class="mx-auto">
+    <img [src]=purchaserCredentials?.profilepic width="60px" height="60px" style="border-radius:150%;">
+</div>
+<br> 
+
+<p id="h" class="text-center"><b>Welcome {{purchaserCredentials?.name}}</b></p>
+<p id="h" class="text-center"><b>{{purchaserCredentials?.email}}</b></p>
+<hr>
+<div class="mx-auto">
+<tr>
+    <th>Date of birth:</th>
+    <td>{{purchaserCredentials?.dob}}</td>
+</tr>
+</div>
+<br>
+<div class="mx-auto">
+<tr>
+    <th>Gender:</th>
+    <td>{{purchaserCredentials?.Gender}}</td>
+</tr>
+</div>
+<hr>
+<!-- update profile -->
+<button class="btn btn-primary mx-auto" (click)="showUpdateForm()">Edit Profile</button>
+
+</div>
+          </div>
+        </li>
+      </div>
+      
+        <li class="nav-item">
+          <a class="nav-link text-white" routerLink="Home" routerLinkActive="active">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" routerLink="Products" routerLinkActive="active">Products</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-white" routerLink="Register" routerLinkActive="active">Register</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" routerLink="login" routerLinkActive="active">Sign In</a>
+          </li>
+        <li class="nav-item" *ngIf="!ad.typeStatus">
+            <a class="nav-link text-white" routerLink="Dashboard" routerLinkActive="active">Dashboard</a>
+          </li>
+          <li class="nav-item" *ngIf="ad.typeStatus">
+            <a class="nav-link text-white" routerLink="admindashboard" routerLinkActive="active">Dashboard</a>
+          </li>
+         
+        </ul>   
+    </div>
+    </nav>
+    <router-outlet></router-outlet>
+     <div class="jumbotron bg-dark ml-10 ">
+      <div class="row text-white">
+        <div class="col-4">
+         <h4>Get to know us</h4>
+         <p>Careers</p>
+         <p>Press releases</p>
+         <p>Amazonn cares</p>
+        </div>
+        <div class="col-4">
+          <h4>Connect with us</h4>
+          <p>Facebook</p>
+          <p>Twitter</p>
+          <p>Instagram</p> 
+        </div>
+        <div class="col-4">
+          <h4>Make money with us</h4>
+          <p>Sell on image</p>
+          <p>Sell under Amazon accelarator</p>
+          <p>Advertise your products</p> 
+        </div>
+    
+    
+         
+      </div>
+    </div>
+     
+    

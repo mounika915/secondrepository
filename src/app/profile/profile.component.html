@@ -1,0 +1,61 @@
+
+
+
+<!-- update form -->
+<div *ngIf="updateFormStatus">
+    <div class="jumbotron">
+    <form #ref="ngForm" (ngSubmit)="saveEditedData(ref)">
+        
+        <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name" [ngModel]="purchaserCredentials?.name" class="form-control">
+         </div>
+         <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" [ngModel]="purchaserCredentials?.email" class="form-control" readonly>
+        </div>
+        <div class="form-group">
+        <label for="dob">Date of birth</label>
+        <input type="date" name="dob" id="dob" [ngModel]="purchaserCredentials?.dob" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="Gender">Gender</label>
+            <input type="text" name="Gender" id="Gender" [ngModel]="purchaserCredentials?.Gender" class="form-control">
+            </div>
+        <div class="form-group">
+            <button class="btn btn-primary" (click)="saveEditedData(ref)">Save</button>
+        </div>
+    </form>
+</div>
+    </div>
+<div class="card">
+    <h2 class="text-center">My Profile</h2>
+    <div class="text-right">
+        <button class="btn btn-warning" (click)="logout()">Logout</button>
+        </div>
+    <div class="mx-auto">
+        <img [src]=purchaserCredentials?.profilepic width="60px" height="60px" style="border-radius:150%;">
+    </div>
+    <br> 
+
+    <h3 id="h" class="text-center"><b>Welcome {{purchaserCredentials?.name}}</b></h3>
+    <h3 id="h" class="text-center"><b>{{purchaserCredentials?.email}}</b></h3>
+    <hr>
+    <div class="mx-auto">
+    <tr>
+        <th>Date of birth:</th>
+        <td>{{purchaserCredentials?.dob}}</td>
+    </tr>
+</div>
+    <br>
+    <div class="mx-auto">
+    <tr>
+        <th>Gender:</th>
+        <td>{{purchaserCredentials?.Gender}}</td>
+    </tr>
+</div>
+<hr>
+<!-- update profile -->
+<button class="btn btn-primary mx-auto" (click)="showUpdateForm()">Edit Profile</button>
+
+</div>

@@ -1,0 +1,29 @@
+.card{
+    font-family: 'Roboto Slab', serif;
+    width:400px;
+    margin:auto;
+    margin-top: 10px;
+    margin-bottom: 400px;
+    
+}
+#form{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.modal fade{
+    height: 10px;
+}
+#p{
+    width:340px;
+    
+}
+.material-icons{
+    border:1px solid rgb(196, 194, 194);
+    
+    border-radius: 4px;
+height: 38px;
+width:38px;
+text-align: center;
+padding-top: 6px;
+cursor: pointer;
+}

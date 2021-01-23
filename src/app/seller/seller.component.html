@@ -1,0 +1,60 @@
+
+<div class="card">
+    <h4><b style="font-size: X-large;">Register your details</b></h4>
+            <form  #ref="ngForm" (ngSubmit)="getSellerData(ref)" id="form">
+                <div class="form-group mb-2">
+                    <label for="name">Your name</label>
+                    <input type="text" name="name" id="name" class="form-control" ngModel required autocomplete="off" #nameRef="ngModel">
+                    <p class="text-danger" *ngIf="nameRef?.touched&&nameRef?.invalid">Name should not be empty</p>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-check">
+                            <input type="radio" name="Gender" class="form-check-input" id="Male" value="Male"  ngModel>
+                            <label for="Male" class="form-check-label">Male</label>
+                        </div>
+                    </div>
+                        <div class="col-sm-6">
+                        <div class="form-check">
+                            <input type="radio" name="Gender" class="form-check-input" id="Female" value="Female" ngModel>
+                            <label for="Female"     class="form-check-label">Female</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group mb-2">
+                    <label for="email">E-mail</label>
+                    <input type="email" name="email" id="email" class="form-control" ngModel required autocomplete="off"  pattern="[a-z^A-Z0-9._%+-]+@[a-z^A-Z0-9.-]+\.[a-z]{2,}$" #emailRef="ngModel">
+                   <div class="text-danger" *ngIf="emailRef?.invalid&&(emailRef?.touched||emailRef?.dirty)">
+                    <p class="text-danger" *ngIf="emailRef?.errors.required">Email should not be empty</p>
+                <p class="text-danger" *ngIf="emailRef?.errors.pattern">Please enter a valid email address like username@gmail.com </p>
+            </div>     
+            </div>
+                <div class="form-group mb-2">
+                    <label for="password">Password</label>
+                    <div class="form-inline">
+                    <input  type="password" name="password" id="password" class="form-control" [type]="hide ? 'password':'text'" ngModel required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" #pwdRef="ngModel">
+                        <i class="material-icons"  (click)="hide =!hide">
+                            {{hide ? 'visibility':'visibility_off'}}
+                        </i>
+                    </div>
+                    <div class="text-danger" *ngIf="pwdRef?.invalid&&(pwdRef?.dirty||pwdRef?.touched)">
+                     <p *ngIf="pwdRef?.errors.required">Password field should be filled</p>
+                     <p *ngIf="pwdRef?.errors.pattern">
+                         Password must contain atleast one lowercase letter one uppercase letter and shoud contain atleast 8 characters
+                     </p>
+                     
+                    </div>
+                </div>
+                <div class="form-group mb-2">
+                    <label for="dob">Date of birth</label>
+                    <input type="date" name="dob" id="date" class="form-control" ngModel>
+                </div>
+                 <div class="form-group mb-2">
+                <label for="profilepic">Upload profilepic</label>
+                <input type="file" (change)="incomingfile($event)"  name="profilepic" accept="image/*" id="profilepic" class="form-control" ngModel>
+            </div>   
+                <button type="submit" class="btn btn-success d-block mx-auto">Register</button>
+            </form>
+        
+    
+    </div>

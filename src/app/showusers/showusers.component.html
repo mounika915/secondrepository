@@ -1,0 +1,17 @@
+<h4 id="h">Customers</h4>
+<table class="table">
+    <thead>
+        <th>Profilepic</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Gender</th>
+        <th>Date of birth</th>
+    </thead>
+    <tr *ngFor="let user of users">
+        <img [src]=user?.profilepic width="40px" height="40px" style="border-radius:100%;">
+        <td>{{user.name}}</td>
+        <td>{{user.email}}</td>
+        <td>{{user.Gender}}</td>
+        <td>{{user.dob}}</td>
+    </tr>
+</table>

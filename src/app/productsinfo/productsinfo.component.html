@@ -1,0 +1,16 @@
+<div class="container">
+    <div class="card">
+<img [src]="productData?.profilepic" width="300px">
+<p><span style="color:blue">{{productData?.name}}{{productData?.description}}</span></p>
+
+<p><span style="color:blue">Rs:{{productData?.price}}</span></p>
+<div class="row">
+    <div class="col-sm-6">
+<button class="btn btn-warning">Buy</button>
+</div>
+<div class="col-sm-6">
+<button class="btn btn-warning" (click)="addToCart(productData)">Add To Cart</button>
+</div>
+</div>
+</div>
+</div>

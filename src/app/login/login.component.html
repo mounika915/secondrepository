@@ -1,0 +1,75 @@
+<!-- <div class="container">
+    
+    <div class="modal fade" id="myModal" role="dialog">
+      <div class="modal-dialog">
+      
+        
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+           
+          </div>
+          <div class="modal-body">
+            <p *ngIf="loginStatus">Invalid name.</p>
+            <p *ngIf="!loginStatus">Invalid password.</p>
+          </div>
+          
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+     
+      </div>
+    </div>
+</div> -->
+
+<div class="card">
+    <form #ref="ngForm" (ngSubmit)="getLoginData(ref)" id="form">
+    <div class="row mb-2">
+        <div class="col-sm-6">
+            <div class="form-check">
+                <input type="radio" name="Purchaser" class="form-check-input" id="Purchaser" value="Purchaser" ngModel>
+                <label for="Purchaser" class="form-check-label">Purchaser</label>
+            </div>
+        </div>
+            <div class="col-sm-6">
+            <div class="form-check">
+                <input type="radio" name="Seller" class="form-check-input" id="Seller" value="Seller" ngModel>
+                <label for="Seller" class="form-check-label">Seller</label>
+            </div>
+        </div>
+    </div>
+    <div class="form-group mb-2">                                  
+        <label for="name">Your name</label>
+       
+        <input type="text" name="name" id="name" class="form-control" ngModel required autocomplete="off" #nameRef="ngModel">
+        <p class="text-danger" *ngIf="nameRef?.touched&&nameRef?.invalid">Name should not be empty</p>
+    </div>
+    <div class="form-group mb-2">
+        <label for="email">E-mail</label>
+        <input type="email" name="email" id="email" class="form-control" ngModel required autocomplete="off"  pattern="[a-z^A-Z0-9._%+-]+@[a-z^A-Z0-9.-]+\.[a-z]{2,}$" #emailRef="ngModel">
+       <div class="text-danger" *ngIf="emailRef?.invalid&&(emailRef?.touched||emailRef?.dirty)">
+        <p class="text-danger" *ngIf="emailRef?.errors.required">Email should not be empty</p>
+    <p class="text-danger" *ngIf="emailRef?.errors.pattern">Please enter a valid email address like username@gmail.com </p>
+</div>     
+</div>
+<div class="form-group mb-4">
+    <label for="password">Password</label>
+    <div class="form-inline">
+    <input  type="password" value="pwd" name="password" id="password" class="form-control" [type]="hide ? 'password':'text'" ngModel required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" #pwdRef="ngModel">
+    <i class="material-icons"  (click)="hide =!hide">
+        {{hide ? 'visibility':'visibility_off'}}
+    </i>
+</div>
+    <div class="text-danger" *ngIf="pwdRef?.invalid&&(pwdRef?.dirty||pwdRef?.touched)">
+    <p *ngIf="pwdRef?.errors.required">Password field should be filled</p>
+     <p *ngIf="pwdRef?.errors.pattern">
+         Password must contain atleast one lowercase letter one uppercase letter and shoud contain atleast 8 characters
+     </p>
+     
+    </div>
+   
+</div>
+    <button type="submit" class="btn btn-success d-block mx-auto" >Sign In</button>
+</form>
+</div>
